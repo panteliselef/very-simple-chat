@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../jquery.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script type="text/javascript">
+    var config = {
+      apiKey: "AIzaSyACmfp3YZEaKXhBiWFLW9eKfG6TC48PAg0",
+      authDomain: "very-simple-chat.firebaseapp.com",
+      databaseURL: "https://very-simple-chat.firebaseio.com",
+      projectId: "very-simple-chat",
+      storageBucket: "very-simple-chat.appspot.com",
+      messagingSenderId: "339636890698"
+    };
+    firebase.initializeApp(config);
+    </script>
+  </head>
+  <body>
+    <div id="btnLogout" class="">
+      Log out
+    </div>
+    <h1>All available users</h1>
+
+    <script type="text/javascript">
+
+    dbUsers = firebase.database().ref('users');
+    $('body').on('click','.user',function() {
+
+      console.log("CLICKED");
+
+    })
+    $('#btnLogout').on('click',function () {
+      firebase.auth().signOut();
+      window.location.assign('index.html');
+    })
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user.email);
+
+
+        dbUsers.once('value',function(snapshot) {
+          console.log('ALL USERS: ');
+          console.log(snapshot.key);
+          snapshot.forEach(function(childSnapshot){
+            $("body").append("<div class='user'>"+childSnapshot.val().email+"</div>")
+          });
+        })
+
+
+      } else {
+        console.log("not logged in");
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

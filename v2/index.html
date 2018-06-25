@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Very Simple Chat with Firebase Real Time Database</title>
+    <!-- <link rel="stylesheet" href="very-simple-chat.css"> -->
+    <script src="../jquery.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+
+    </script>
+    <style media="screen">
+      .container {
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 25%;
+        max-width: 300px;
+        transform: translateY(-10%);
+      }
+      input {
+        display: block;
+        width: 100%;
+        border: none;
+        padding: 10px 0;
+        border-bottom: 1px solid #999;
+        font-size: 1.3em;
+      }
+      .button {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        appearance:none;
+        border-radius: 2px;
+        padding: 10px;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+      }
+      .btn-action {
+        background-color: #329DEF;
+        color: #fff;
+      }
+      .btn-secondary {
+        background-color: #fff;
+        color: #329DEF;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <select id="emailsOptions" class="" name="">
+        <option value="test@elefcodes.com">test@elefcodes.com</option>
+        <option value="test1@elefcodes.com">test1@elefcodes.com</option>
+        <option value="test2@elefcodes.com">test2@elefcodes.com</option>
+        <option value="test3@elefcodes.com">test3@elefcodes.com</option>
+      </select>
+
+      <!-- <input id="txtEmail" type="email" placeholder="Email"> -->
+
+      <!-- <input id="txtPassword" type="password" placeholder="Password"> -->
+
+      <input id="txtUsername" type="text" class="hide" placeholder="Username">
+
+      <button id="btnLogin" type="button" class="button btn-action">Log in</button>
+
+      <button id="btnSignUp" type="button" class="button btn-secondary">Sign Up</button>
+
+      <button id="btnLogout" type="button" class="button btn-action hide">Log out</button>
+
+      <button id="btnSetUsername" type="button" class="button btn-action hide">Set Username</button>
+    </div>
+
+    <script type="text/javascript" src="login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Very Simple Chat 2 with Firebase Real Time Database</title>
+    <link rel="stylesheet" href="very-simple-chat.css">
+    <script src="../../jquery.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyACmfp3YZEaKXhBiWFLW9eKfG6TC48PAg0",
+        authDomain: "very-simple-chat.firebaseapp.com",
+        databaseURL: "https://very-simple-chat.firebaseio.com",
+        projectId: "very-simple-chat",
+        storageBucket: "very-simple-chat.appspot.com",
+        messagingSenderId: "339636890698"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+    </script>
+
+  </head>
+  <body>
+    <h2 class="">My first Realtime chat</h2>
+    <div class="container">
+      <div id="left-chat" class="chat">
+        <div class="header">
+          <div id="start-over" class="button">start over</div>
+          <div id="show-more" class="button">show more</div>
+        </div>
+        <div class="messages-box">
+          <div class="messages">
+            <div id="starting-message" class="messageblock">Start this Chat NOW</div>
+            <div id="loading-message" class="messageblock">Loading ... </div>
+            <!-- <div id="me" class="message">Test Test Test</div>
+            <div id="you" class="message">Test Test Test</div>
+            <div id="you" class="message">Test Test Test<div class="username">by<em> none</em></div></div>
+            <div id="me" class="message">Test Test Test<div class="username">by<em> Elefcodes</em></div></div>
+            <div id="me" class="message">Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test</div> -->
+          </div>
+        </div>
+        <div class="inputs">
+          <input id="message-input" type="text" name="" placeholder="Type a message" autofocus>
+          <input id="submit" class="" type="button" value="Send">
+        </div>
+      </div>
+
+      <div id="right-chat" class="chat">
+        <div class="header">
+          <!-- <div id="start-over" class="button">start over</div> -->
+          <div id="show-more" class="button">show more</div>
+        </div>
+        <div class="messages-box">
+          <div class="messages">
+            <div id="starting-message" class="messageblock">Start this Chat NOW</div>
+            <div id="loading-message" class="messageblock">Loading ... </div>
+            <!-- <div id="you" class="message">Test Test Test</div>
+            <div id="me" class="message">Test Test Test</div>
+            <div id="me" class="message">Test Test Test<div class="username">by<em> none</em></div></div>
+            <div id="you" class="message">Test Test Test<div class="username">by<em> Elefcodes</em></div></div>
+            <div id="you" class="message">Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test</div> -->
+          </div>
+        </div>
+        <div class="inputs">
+          <input id="message-input" type="text" name="" placeholder="Type a message">
+          <input id="submit" class="" type="button" value="Send">
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="very-simple-chat.js"></script>
+
+    <!-- https://coolors.co/1eb6d8-6457a6-9dacff-76e5fc-4bc0d9 -->
+  </body>
+</html>

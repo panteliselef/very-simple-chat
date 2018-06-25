@@ -1,0 +1,5 @@
+[ ] Learn How to use Firebase.auth()
+[X] Create Sign In Page
+[ ] Show All available USERS
+
+[ ] Learn how to create and save a chat for each individual person
